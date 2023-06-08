@@ -1,0 +1,56 @@
+
+  <div class="row">
+    <div class="col-12">
+    <mat-form-field class="search-w100">
+      <input matInput placeholder="Search" [(ngModel)]="searchValue" (ngModelChange)="searchCandidateChange()">
+    </mat-form-field>
+    </div>
+    <!-- <div class="col-3">
+    <button mat-raised-button color="primary" (click)="searchCandidate()">Search</button>
+    </div> -->
+  </div>
+  <app-loading *ngIf="loading;else renderPolling"></app-loading>
+  <ng-template #renderPolling>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <div class="col" *ngFor="let item of dataCandidate">
+        <div class="card">
+          <div class="row">
+            <div class="col-6">
+              <img src={{item.presidentimage}} class="card-img-top left" alt="Hollywood Sign on The Hill"  />
+            </div>
+            <div class="col-6">
+              <img src={{item.vicepresidentimage}} class="card-img-top right" alt="Palm Springs Road" />
+            </div>
+          </div>
+
+          <div class="card-body">
+            <h5 class="card-title">President & Vice President for 2024</h5>
+
+              <h3>  {{item.label}}  </h3>
+
+              <div class="row" *ngIf="isVoted;else resultVotes">
+                <div class="col-6">
+                  <button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark" (click)="postVotes(item.id)">VOTE</button>
+                </div>
+
+                <div class="col-6">
+                  <button type="button" class="btn btn-outline-danger f-right" data-mdb-ripple-color="danger" (click)="deleteCandidate(item.id)">Delete</button>
+                </div>
+
+              </div>
+
+
+            <ng-template #resultVotes>
+              <button type="button" disabled class="btn btn-outline-info btn-rounded" data-mdb-ripple-color="dark">{{item.votes}} Voted</button>
+            </ng-template>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+
+
+
+

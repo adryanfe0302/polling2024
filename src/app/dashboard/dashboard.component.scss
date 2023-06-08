@@ -1,0 +1,13 @@
+.loading-component {
+  height: 100vh; /* Adjust the height as needed */
+}
+
+.loading-component .spinner-border {
+  width: 4rem; /* Adjust the spinner size as needed */
+  height: 4rem; /* Adjust the spinner size as needed */
+}
+
+#chart {
+  max-width: 550px;
+  margin: 35px auto;
+}

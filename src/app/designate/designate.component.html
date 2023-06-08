@@ -1,0 +1,48 @@
+
+
+<div class="grid-container">
+  <mat-card class="grid-item">
+    <mat-form-field class="col-form-block">
+      <mat-label>Select President</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let candidate of candidateOptions" [value]="candidate.name" (click)="selected(candidate)">{{candidate.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-card class="example-card" *ngIf="selectedPresident">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{selectedPresident.name || ''}}</mat-card-title>
+        <mat-card-subtitle>{{selectedPresident.status || ''}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="selectedPresident.images" class="imgAutosize">
+    </mat-card>
+  </mat-card>
+
+  <mat-card class="grid-item">
+    <mat-form-field class="col-form-block">
+      <mat-label>Select Vice President</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let candidate of candidateOptions" [value]="candidate.name" (click)="selectedVP(candidate)">{{candidate.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-card class="example-card" *ngIf="selectedVicePresident">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{selectedVicePresident.name || ''}}</mat-card-title>
+        <mat-card-subtitle>{{selectedVicePresident.status || ''}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="selectedVicePresident.images" class="imgAutosize">
+    </mat-card>
+  </mat-card>
+</div>
+
+<section>
+  <div class="example-button-row">
+    <button mat-raised-button color="primary" mat-button-size="small" [disabled]="isCandidateSelected" (click)="createCandidate()">Create Candidate</button>
+  </div>
+</section>
+
+
+<!-- <app-modal></app-modal> -->

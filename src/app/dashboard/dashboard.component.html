@@ -1,0 +1,4 @@
+<app-loading *ngIf="loading;else renderCharts"></app-loading>
+<ng-template #renderCharts>
+  <app-charts *ngIf="chartReady" [listOfParty]="sampleDataFromParentToChild"></app-charts>
+</ng-template>

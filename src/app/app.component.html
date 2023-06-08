@@ -1,0 +1,10 @@
+<!-- <router-outlet></router-outlet> -->
+
+<!-- login success -->
+<app-layout *ngIf="isLogin; else isNotLogin"></app-layout>
+
+
+<!-- need to login -->
+<ng-template #isNotLogin>
+  <app-login></app-login>
+</ng-template>

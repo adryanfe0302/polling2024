@@ -1,0 +1,22 @@
+<mat-form-field class="form-create-candidate">
+  <mat-label>Name</mat-label>
+  <input matInputLg matInput [(ngModel)]="name">
+</mat-form-field>
+
+<mat-form-field class="form-create-candidate">
+  <mat-label>Status</mat-label>
+  <input matInput [(ngModel)]="status">
+</mat-form-field>
+
+<mat-form-field class="form-create-candidate">
+  <mat-label>URL</mat-label>
+  <input matInput [(ngModel)]="images">
+</mat-form-field>
+
+<form (ngSubmit)="uploadFile()" enctype="multipart/form-data">
+  <input type="file" name="file" #fileInput>
+  <button mat-raised-button color="primary" type="submit">Upload</button>
+</form>
+
+<button mat-raised-button color="primary" (click)="saveCandidate()">Save</button>
+

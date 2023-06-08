@@ -1,0 +1,40 @@
+.left-container{
+  width: 75%;
+  display: inline-block;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  .carousel{
+    height: 100vh;
+  }
+  .picsum-img-wrapper{
+    img{
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+  }
+}
+
+.right-container{
+  width: 25%;
+  display: inline-block;
+  background-color: whitesmoke;
+  vertical-align: top;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  form{
+    margin-top:100px;
+  }
+  .usercreated{
+    color: green;
+    font-style: italic;
+  }
+  .warning{
+    font-style: italic;
+    color: #ec5c5c;
+    font-size: 12px;
+    padding-bottom: 10px;
+  }
+}
